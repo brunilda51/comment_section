@@ -1,23 +1,15 @@
-import logo from './logo.svg';
+import { useContext } from 'react/cjs/react.production.min';
 import './App.css';
-
+import Comments from './comments/Comments';
+import { CommentsContext } from './context/comments_context';
+import CommentContextProvider from './context/comments_context';
 function App() {
+  const [comment, setComments] = useContext(CommentsContext);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CommentContextProvider value={{comment, setComments}}>
+        <Comments />
+      </CommentContextProvider>
     </div>
   );
 }
