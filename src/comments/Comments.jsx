@@ -1,16 +1,31 @@
+import React, { useContext}  from 'react';
+import CommentContextProvider, { CommentsContext } from '../context/comments_context';
 import Comment from '../comment/Comment';
+import './Comments.css';
+import CommentContext from '../comment/Comment';
+import InputForm from '../inputform/InputForm';
 
-function generate_comments(props) {
-    props.comments.map(comment => {
+export const renderComments = (props) => {
+    if(!props) {props = []}
+    return props.map((comment, i) => {
         return (<Comment
             username={comment.username}
+            id={comment.id}
+            date={comment.date}
             text={comment.text}
-            rating={comment.rating}
+            votes={comment.votes}
+            key={i}
+            comments={comment.comments}
         />)
     })
 }
-export default function Comments(props) {
-    return (<div className="coments">
-        {generate_comments(props)}
+
+function Comments(props){
+    const { comments, setComments } = useContext(CommentsContext);
+    return (<div className="comments">
+        <InputForm />
+        {renderComments(comments)}
     </div>)
 }
+
+export default Comments;

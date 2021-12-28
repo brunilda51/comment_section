@@ -1,17 +1,17 @@
-import { useContext } from 'react/cjs/react.production.min';
 import './App.css';
+import React from 'react';
 import Comments from './comments/Comments';
-import { CommentsContext } from './context/comments_context';
-import CommentContextProvider from './context/comments_context';
+import CommentsContextProvider from './context/comments_context';
 function App() {
-  const [comment, setComments] = useContext(CommentsContext);
+
   return (
     <div className="App">
-      <CommentContextProvider value={{comment, setComments}}>
+     <CommentsContextProvider>
         <Comments />
-      </CommentContextProvider>
+      </CommentsContextProvider>
     </div>
   );
 }
+
 
 export default App;

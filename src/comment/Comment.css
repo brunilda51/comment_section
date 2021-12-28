@@ -1,0 +1,50 @@
+.comment {
+    margin: 10px;
+    border-left: 1px solid #b9a6a6;
+    border-radius: 5px ;
+    padding: 10px ;   
+}
+
+.cta {
+    margin-top: 10px;
+}
+
+.reply{
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.username {
+    color: blue;
+    font-weight: bold;
+    margin: 10px 0;
+
+}
+
+.cta_link {
+    margin: 10px 10px 10px 0;
+    color: #877d7d;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.profile {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    margin: 0 10px 10px 0;
+    background-position: center center;
+    background-size: cover;
+    background-image: url('https://i.pinimg.com/564x/d1/91/fc/d191fc691d2a824422062b58e4b0056f.jpg');
+  }
+
+  .user_info{
+      display: flex;
+  }
+
+  .hidden {
+      display: none;
+  }
