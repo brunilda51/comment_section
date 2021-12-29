@@ -4,6 +4,7 @@ import "./InputForm.css";
 
 function InputForm(props){
     const [text, setText] = useState("");
+
     var {comments, setComments} = useContext(CommentsContext);
     return (
         props.visible ? <div className="input_form" {...props}>
@@ -15,7 +16,7 @@ function InputForm(props){
           }}
         />
         <div className="panel">
-          <button className="comment_button" onClick={() => { setText(''); setComments({text: text, parentid: props.parentid})}}>Comment</button>
+          <button className="comment_button" disabled={text.length === 0} onClick={() => { setText(''); setComments({text: text, parentid: props.parentid})}}>Comment</button>
         </div>
 
        </div> : null

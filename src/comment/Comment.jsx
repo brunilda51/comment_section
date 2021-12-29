@@ -5,9 +5,7 @@ import InputForm from '../inputform/InputForm';
 import { renderComments } from '../comments/Comments';
 
 function Comment(props) {
-    const [show, setShow] = useState(true);
-    // const [replying, setReplying] = useContext(CommentContext);
-    // const [minimized, setMinimized] = useState(false);
+    const [show, setShow] = useState(false);
     const toggleReply = () => setShow(!show)
 
     return (
@@ -21,7 +19,7 @@ function Comment(props) {
                 <a className="cta_link" onClick={toggleReply}>Reply</a>
                 <a className="cta_link">Share</a>
                 <a className="cta_link">Report</a>
-                <InputForm visible={show} parentid={props.id} /> 
+                <InputForm visible={show ? 1 : 0} parentid={props.id} /> 
             </div>
             <div className={`comments`}>
                     {renderComments(props.comments)}

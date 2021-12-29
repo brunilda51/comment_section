@@ -1,10 +1,11 @@
 input {
-    margin: 20px ;
+    margin: 20px 0 20px ;
     border: 1px solid #b9a6a6;
-    border-radius: 20px;
+    border-radius: 5px 0 0 5px;
     padding: 20px;
     padding: 10px;
     width: 500px;
+    outline: none;
 }
 
 .input_form{
@@ -14,9 +15,9 @@ input {
 
 .comment_button {
     padding: 10px;
-    border: none;
+    border: 1px solid #4a1e1e;
     cursor: pointer;
-    border-radius: 20px;
+    border-radius: 0 5px 5px 0;
     color: white;
-    background-color: slateblue;
+    background-color: #4a1e1e;
 }

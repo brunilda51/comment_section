@@ -1,22 +1,22 @@
 import uuid from 'uuid/v4';
 
 export const commentReducer = (state, action) => {
-    if(!state) state = [];
+    if (!state) state = [];
     var comment = typeof action !== 'function' ? action : undefined;
-    if (comment && comment.parentid) {
-    var selectedComment = findObjectByLabel(state, comment.parentid);
-    selectedComment.comments.push(
-        {
-            username: "Bruna",
-            text: comment.text,
-            parentid: selectedComment.id,
-            comments: [],
-            id: uuid()
-        }
-    )
-        return [...state];
-    } else {
-        if (comment) {
+    if (comment) {
+        if (comment.parentid) {
+            var selectedComment = findObjectByLabel(state, comment.parentid);
+            selectedComment.comments.push(
+                {
+                    username: "Bruna",
+                    text: comment.text,
+                    parentid: selectedComment.id,
+                    comments: [],
+                    id: uuid()
+                }
+            )
+            return [...state];
+        } else {
             return [...state, {
                 username: "Bruna",
                 text: comment.text,
@@ -24,11 +24,10 @@ export const commentReducer = (state, action) => {
                 id: uuid()
             }
             ]
-        } else {
-            return state;
         }
+    } else {
+        return state;
     }
-
 }
 
 var findObjectByLabel = function (array, parentId) {
@@ -38,6 +37,6 @@ var findObjectByLabel = function (array, parentId) {
             var foundComment = findObjectByLabel(obj.comments, parentId);
             if (foundComment) { return foundComment; }
         }
-        return null;
     }
+    return null;
 };
