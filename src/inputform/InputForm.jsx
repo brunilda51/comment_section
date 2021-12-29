@@ -5,9 +5,8 @@ import "./InputForm.css";
 function InputForm(props){
     const [text, setText] = useState("");
     var {comments, setComments} = useContext(CommentsContext);
-      console.log(useContext(CommentsContext))
     return (
-        <div className="input_form" {...props}>
+        props.visible ? <div className="input_form" {...props}>
         <input
           placeholder="What are your thoughts?"
           value={text}
@@ -19,7 +18,7 @@ function InputForm(props){
           <button className="comment_button" onClick={() => { setText(''); setComments({text: text, parentid: props.parentid})}}>Comment</button>
         </div>
 
-       </div>
+       </div> : null
 
     ); }
 

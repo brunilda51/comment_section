@@ -32,7 +32,6 @@ export const commentReducer = (state, action) => {
 }
 
 var findObjectByLabel = function (array, parentId) {
-    console.log(array, parentId)
     for (var obj of array) {
         if (obj.id === parentId) { return obj; }
         else if (obj.hasOwnProperty("comments") && obj.comments.length > 0) {

@@ -6,7 +6,8 @@ import { renderComments } from '../comments/Comments';
 
 function Comment(props) {
     const [show, setShow] = useState(true);
-    var {comments, setComments} = useContext(CommentsContext);
+    // const [replying, setReplying] = useContext(CommentContext);
+    // const [minimized, setMinimized] = useState(false);
     const toggleReply = () => setShow(!show)
 
     return (
