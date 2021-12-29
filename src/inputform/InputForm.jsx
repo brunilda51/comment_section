@@ -9,11 +9,11 @@ function InputForm(props){
     var {comments, setComments} = useContext(CommentsContext);
 
     useEffect(() => {
-      setVisibility(props.visible);
+      if(!props.first) setVisibility(visible => !visible);
     }, [props.visible]);
 
     return (
-        props.visible && visible ? <div className="input_form" {...props}>
+        visible ? <div className="input_form" {...props}>
         <input
           placeholder="What are your thoughts?"
           value={text}

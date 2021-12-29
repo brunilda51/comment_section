@@ -5,7 +5,7 @@ import InputForm from '../inputform/InputForm';
 import { renderComments } from '../comments/Comments';
 
 function Comment(props) {
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(true);
     const toggleReply = () => setShow(!show)
 
     return (
