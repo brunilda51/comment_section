@@ -1,11 +1,12 @@
 import './Comment.css';
-import { useState } from 'react';
+import { useState, useContext} from 'react';
 import CommentsContextProvider, {CommentsContext} from '../context/comments_context';
 import InputForm from '../inputform/InputForm';
 import { renderComments } from '../comments/Comments';
 
 function Comment(props) {
-    const [show, setShow] = useState(true)
+    const [show, setShow] = useState(true);
+    var {comments, setComments} = useContext(CommentsContext);
     const toggleReply = () => setShow(!show)
 
     return (
@@ -19,9 +20,7 @@ function Comment(props) {
                 <a className="cta_link" onClick={toggleReply}>Reply</a>
                 <a className="cta_link">Share</a>
                 <a className="cta_link">Report</a>
-                <CommentsContextProvider>
-                <InputForm parentid={props.id} /> 
-                </CommentsContextProvider>
+                <InputForm visible={show} parentid={props.id} /> 
             </div>
             <div className={`comments`}>
                     {renderComments(props.comments)}

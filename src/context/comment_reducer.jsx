@@ -14,11 +14,9 @@ export const commentReducer = (state, action) => {
             id: uuid()
         }
     )
-        console.log("CASE 1", state)
-        return state;
+        return [...state];
     } else {
         if (comment) {
-            console.log("CASE 2", state)
             return [...state, {
                 username: "Bruna",
                 text: comment.text,
@@ -27,8 +25,7 @@ export const commentReducer = (state, action) => {
             }
             ]
         } else {
-            console.log("CASE 3", state)
-            return state
+            return state;
         }
     }
 

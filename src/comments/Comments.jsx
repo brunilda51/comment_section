@@ -23,7 +23,7 @@ export const renderComments = (props) => {
 function Comments(props){
     const { comments, setComments } = useContext(CommentsContext);
     return (<div className="comments">
-        <InputForm />
+        <InputForm visible={true} />
         {renderComments(comments)}
     </div>)
 }
