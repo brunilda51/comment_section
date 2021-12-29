@@ -1,7 +1,7 @@
-import React, { createContext, useReducer, useEffect } from 'react';
+import { createContext, useReducer, useEffect } from 'react';
 import Comments from '../comments/Comments';
 import { commentReducer } from './comment_reducer';
-
+import InputForm from '../inputform/InputForm';
 export const CommentsContext = createContext({});
 
 

@@ -1,6 +1,6 @@
 import './Comment.css';
 import { useState } from 'react';
-import CommentsContextProvider from '../context/comments_context';
+import CommentsContextProvider, {CommentsContext} from '../context/comments_context';
 import InputForm from '../inputform/InputForm';
 import { renderComments } from '../comments/Comments';
 
@@ -19,9 +19,9 @@ function Comment(props) {
                 <a className="cta_link" onClick={toggleReply}>Reply</a>
                 <a className="cta_link">Share</a>
                 <a className="cta_link">Report</a>
-              <CommentsContextProvider> 
-                    <InputForm parentid={props.id} />  </CommentsContextProvider>
-             
+                <CommentsContextProvider>
+                <InputForm parentid={props.id} /> 
+                </CommentsContextProvider>
             </div>
             <div className={`comments`}>
                     {renderComments(props.comments)}

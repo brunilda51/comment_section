@@ -9,12 +9,13 @@ function InputForm(props){
         <div className="input_form" {...props}>
         <input
           placeholder="What are your thoughts?"
+          value={text}
           onChange={value => {
             setText(value.target.value);
           }}
         />
         <div className="panel">
-          <button className="comment_button" onClick={() => setComments({text: text, parentid: props.parentid})}>COMMENT</button>
+          <button className="comment_button" onClick={() => { setText(''); setComments({text: text, parentid: props.parentid})}}>COMMENT</button>
         </div>
 
        </div>
